@@ -96,10 +96,8 @@ export default class AuthenticationServer {
         let token = req.body.token;
 
         if (!token) {
-            token = getBearerToken(req.params.token);
+            token = getBearerToken(req);
         }
-
-        console.log(token);
 
         if (!token) {
             res.status(401)

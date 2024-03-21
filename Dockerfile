@@ -11,7 +11,7 @@ ENTRYPOINT ["node", "./app.js"]
 # /home/node
 
 
-# docker build -t node-authentication:1.7 .
-# docker tag node-authentication:1.7 adomargon/node-authentication:1.7
-# docker push adomargon/node-authentication:1.7
-# docker run --name authentication-server -p 80:80 node-authentication:1.7
+# sudo docker build -t node-authentication:1.8 .
+# sudo docker tag node-authentication:1.8 adomargon/node-authentication:1.8
+# sudo docker push adomargon/node-authentication:1.8
+# sudo docker run --name authentication-server -p 80:80 adomargon/node-authentication:1.8
