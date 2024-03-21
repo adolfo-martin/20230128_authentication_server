@@ -93,7 +93,14 @@ export default class AuthenticationServer {
 
 
     _validateToken(req, res) {
-        const token = req.body.token;
+        let token = req.body.token;
+
+        if (!token) {
+            token = getBearerToken(req.params.token);
+        }
+
+        console.log(token);
+
         if (!token) {
             res.status(401)
                 .json({ ok: false, message: 'There is no token.' });
@@ -109,7 +116,13 @@ export default class AuthenticationServer {
 
             res.status(200)
                 .json({ ok: true, message: 'The token is valid' });
-        })
+        });
+
+        function getBearerToken(req) {
+            const authHeader = req.headers['authorization'];
+            const token = authHeader && authHeader.split(' ')[1];
+            return token;
+        }
     }
 
 

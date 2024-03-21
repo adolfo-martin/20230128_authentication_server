@@ -5,5 +5,5 @@ import UsersRepository from './UsersRepository.js';
 dotenv.config();
 
 const repository = new UsersRepository();
-const server = new AuthenticationServer(process.env.SERVER_PORT || 8081, repository);
+const server = new AuthenticationServer(process.env.SERVER_PORT || 3000, repository);
 server.listen();
