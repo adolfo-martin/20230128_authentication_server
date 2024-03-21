@@ -7,7 +7,7 @@ ENTRYPOINT ["node", "./app.js"]
 
 
 # ENV NODE_VERSION=19.3.0
-# docker pull node:current-alpine3.17
+# docker pull node:current-alpine3.19
 # /home/node
 
 
